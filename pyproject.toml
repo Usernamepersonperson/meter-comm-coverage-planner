@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "meter-comm-coverage-planner"
+version = "0.1.0"
+description = "Open-source radio coverage and gateway placement planner for utility smart-meter networks (LoRaWAN, wM-Bus, mioty at 868 MHz) using Swiss open geodata."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = ["numpy>=1.26", "pandas>=2.1", "scipy>=1.11", "matplotlib>=3.8", "pyproj>=3.6"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5"]
+fetch = ["rasterio>=1.3"]
+
+[project.scripts]
+meter-coverage = "meter_coverage.cli:main"
+
+[tool.setuptools]
+packages = ["meter_coverage"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-p no:asyncio"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]

@@ -1,0 +1,32 @@
+{
+ "claim": "Open-source planner: 6 gateways reach 98% of a Swiss town's smart meters (modelled)",
+ "data_label": "open data: swisstopo swissALTI3D + FSO building register, Murten FR, 2026-11",
+ "stats": [
+  [
+   "98 %",
+   "meters heard by 6 gateways (modelled)",
+   "accent"
+  ],
+  [
+   "12",
+   "gateways so 95% are heard twice",
+   "green"
+  ],
+  [
+   "3-16",
+   "gateways for 95%, by model choice",
+   "amber"
+  ]
+ ],
+ "limit": "No field data: entry loss, meters per building and the model choice (3 to 16 gateways) are assumptions.",
+ "alt": "Dark map of the town of Murten with 2,079 building points coloured by LoRaWAN spreading factor and six gateway stars, next to a curve of percent of meters covered versus number of gateways that passes 95 percent at six gateways.",
+ "hashtags": [
+  "#SmartMeter",
+  "#LoRaWAN",
+  "#wMBus",
+  "#Geodata",
+  "#OpenSource",
+  "#Energiewende"
+ ],
+ "post": "Swiss utilities have to move 80% of their metering points to smart meters by the end of 2027, and a lot of those meters sit in cellars. Where do you put the radio gateways?\n\nI built an open-source planner for that. It takes the federal building register and the swisstopo terrain model, computes path loss (Okumura-Hata plus a terrain knife-edge check), applies LoRaWAN and wM-Bus link budgets, and picks gateway sites from candidate rooftops and poles.\n\nOn one real town (Murten FR, 2,079 buildings, 4,466 assumed meters), modelled with my base assumptions:\n- 6 gateways reach 97.7% of meters; random 6-site sets reach 70% on average.\n- 12 gateways are needed before 95% of meters are heard by at least two.\n- With the same assumptions wM-Bus T1 needs 40 collectors for 80%, LoRaWAN 3.\n\nWhat is not verified: there are no field measurements. Changing only the propagation model moves the answer from 3 to 16 gateways, and cellar loss from 20 to 40 dB moves it from 3 to 11. Entry loss and meters per building are my assumptions.\n\nI could not find an open-source Swiss tool for this. If you plan smart-meter networks: which cellar loss do you actually see, 20, 30 or 40 dB?\n\nCode: https://github.com/Usernamepersonperson/meter-comm-coverage-planner"
+}
