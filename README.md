@@ -6,7 +6,7 @@ Open-source radio coverage and gateway placement planner for utility smart-meter
 
 *Murten FR, 2,079 buildings with 4,466 assumed meters. Modelled coverage with stated assumptions; no field measurements.*
 
-Swiss grid operators have to bring 80% of their metering points to smart meters by the end of 2027 (Swiss electricity supply ordinance StromVV, SR 734.71; the 80% / end-2027 figure is taken from public smart-meter information, the exact article was not checked here). Many of those meters sit in cellars. This tool answers: where do I put N gateways, how many meters does that reach, with how much redundancy, and what does it do to spreading factors, airtime and battery life.
+Swiss grid operators have to bring 80% of their metering points to smart meters by the end of 2027 (StromVV, SR 734.71, Art. 31e para. 1: within ten years of the amendment of 1 November 2017, in force since 1 January 2018, 80% of all metering devices in a grid area must be smart metering systems; checked in the consolidated text of 1 July 2026 on fedlex). Many of those meters sit in cellars. This tool answers: where do I put N gateways, how many meters does that reach, with how much redundancy, and what does it do to spreading factors, airtime and battery life.
 
 ## What it does
 
@@ -104,7 +104,6 @@ flowchart LR
 - Candidate sites are generated, not checked for ownership, roof access, mains or backhaul. Rooftop height is storeys x 3 m + 2 m.
 - One town, 10 m terrain, building points rather than footprints. The meters-per-building rule is a guess.
 - The ILP is time-limited (60 s) and did not always beat the swap search; its bound is reported, not an optimum.
-- The 80% by end of 2027 target is cited from a utility page; the exact ordinance article was not checked.
 
 ## Licence
 
